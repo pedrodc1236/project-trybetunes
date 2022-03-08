@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Header from '../Componentes/Header';
 import './Search.css';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import Loading from '../Componentes/Loading';
+import { Link } from 'react-router-dom';
 
 class Search extends Component {
   constructor() {
@@ -8,6 +11,25 @@ class Search extends Component {
     this.state = ({
       inputSearch: '',
       disabled: true,
+      loading: false,
+      newInputSearch: null,
+      albums: [],
+    });
+  }
+
+  haddleSearch = () => {
+    const { inputSearch } = this.state;
+    this.setState({
+      loading: true,
+      inputSearch: '',
+      newInputSearch: inputSearch,
+    }, async () => {
+      const { newInputSearch } = this.state;
+      const artistArrayObj = await searchAlbumsAPI(newInputSearch);
+      this.setState({
+        loading: false,
+        albums: artistArrayObj,
+      });
     });
   }
 
@@ -38,7 +60,11 @@ class Search extends Component {
     const {
       inputSearch,
       disabled,
+      loading,
+      newInputSearch,
+      albums,
     } = this.state;
+    if (loading) return <Loading />;
     return (
       <div data-testid="page-search">
         <Header />
@@ -60,11 +86,41 @@ class Search extends Component {
             id="btn-search"
             disabled={ disabled }
             data-testid="search-artist-button"
+            onClick={ this.haddleSearch }
           >
             Pesquisar
           </button>
-
         </form>
+
+        <section>
+          { newInputSearch && <p>{ `Resultado de álbuns de: ${newInputSearch}` }</p> }
+        </section>
+
+        <section>
+          { albums.length === 0 ? <p>Nenhum álbum foi encontrado</p> : (
+            <section className="all-album">
+              {
+                albums.map((album) => (
+                  <Link
+                    data-testid={ `link-to-album-${album.collectionId}` }
+                    className="link-all-album"
+                    to={ `/album/${album.collectionId}` }
+                    key={ album.collectionId }
+                  >
+                    <div className="album-div">
+                      <img
+                        src={ album.artworkUrl100 }
+                        alt={ album.collectionName }
+                      />
+                      <p>{album.collectionName}</p>
+                      <p>{album.artistName}</p>
+                    </div>
+                  </Link>
+                ))
+              }
+            </section>
+          )}
+        </section>
       </div>
     );
   }
