@@ -11,27 +11,29 @@ import NotFound from './pages/NotFound';
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <>
         <p>TrybeTunes</p>
-        <nav>
+        <BrowserRouter>
+          {/* <nav>
           <Link to="/">Login </Link>
           <Link to="/search">Search </Link>
           <Link to="/album/:id">Album </Link>
           <Link to="/favorites">Favorites </Link>
           <Link to="/profile">Profile </Link>
           <Link to="/profile/edit">ProfileEdit </Link>
-        </nav>
+        </nav> */}
 
-        <Switch>
-          <Route exact path="/" component={ Login } />
-          <Route path="/search" component={ Search } />
-          <Route path="/album/:id" component={ Album } />
-          <Route path="/favorites" component={ Favorites } />
-          <Route exact path="/profile" component={ Profile } />
-          <Route path="/profile/edit" component={ ProfileEdit } />
-          <Route component={ NotFound } />
-        </Switch>
-      </BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={ Login } />
+            <Route path="/search" component={ Search } />
+            <Route path="/album/:id" component={ Album } />
+            <Route path="/favorites" component={ Favorites } />
+            <Route exact path="/profile" component={ Profile } />
+            <Route path="/profile/edit" component={ ProfileEdit } />
+            <Route component={ NotFound } />
+          </Switch>
+        </BrowserRouter>
+      </>
     );
   }
 }
