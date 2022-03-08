@@ -7,12 +7,13 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
+import './App.css';
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <p>TrybeTunes</p>
+        <p id="title-trybetunes">TrybeTunes</p>
         <BrowserRouter>
           {/* <nav>
           <Link to="/">Login </Link>
