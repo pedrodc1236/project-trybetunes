@@ -62,12 +62,12 @@ class Login extends Component {
     } = this.state;
     if (loading) return <Loading />;
     return (
-      <div id="login-div" data-testid="page-login">
-        <form id="login-form">
+      <div className="login-div" data-testid="page-login">
+        <form className="login-form">
 
           <label htmlFor="name-input">
             <input
-              id="name-input"
+              className="name-input"
               data-testid="login-name-input"
               type="text"
               placeholder="Nome"
@@ -78,7 +78,7 @@ class Login extends Component {
           </label>
 
           <button
-            id="btn-form"
+            className="btn-form"
             disabled={ disabledBtn }
             type="submit"
             data-testid="login-submit-button"

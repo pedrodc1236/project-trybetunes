@@ -1,6 +1,7 @@
-#loading {
+.loading {
   background-color: black;
   color: white;
-  font-weight: bolder;
   font-size: 20px;
+  font-weight: 700;
 }
+

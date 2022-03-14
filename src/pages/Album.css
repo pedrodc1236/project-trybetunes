@@ -1,0 +1,36 @@
+.album-section {
+  background-color: white;
+  border: 2px solid #e1e5eb;
+  box-shadow: 2px 4px 4px #e1e5eb;
+  margin: 20px auto;
+  text-align: center;
+  width: 300px;
+}
+
+.album-section img {
+  height: 200px;
+  margin: 10px;
+  width: 200px;
+}
+
+.music-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.track-card {
+  background-color: white;
+  border: 2px solid #e1e5eb;
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px #e1e5eb;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.track-card:hover {
+  border: 2px solid #03806286;
+  box-shadow: 2px 4px 4px #e1e5ee;
+}

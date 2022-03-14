@@ -13,21 +13,15 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <p id="title-trybetunes">TrybeTunes</p>
+        <p className="title">TrybeTunes</p>
         <BrowserRouter>
-          {/* <nav>
-          <Link to="/">Login </Link>
-          <Link to="/search">Search </Link>
-          <Link to="/album/:id">Album </Link>
-          <Link to="/favorites">Favorites </Link>
-          <Link to="/profile">Profile </Link>
-          <Link to="/profile/edit">ProfileEdit </Link>
-        </nav> */}
-
           <Switch>
             <Route exact path="/" component={ Login } />
             <Route path="/search" component={ Search } />
-            <Route path="/album/:id" component={ Album } />
+            <Route
+              path="/album/:id"
+              render={ (props) => <Album { ...props } /> }
+            />
             <Route path="/favorites" component={ Favorites } />
             <Route exact path="/profile" component={ Profile } />
             <Route path="/profile/edit" component={ ProfileEdit } />

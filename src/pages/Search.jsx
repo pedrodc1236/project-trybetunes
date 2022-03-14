@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../Componentes/Header';
 import './Search.css';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../Componentes/Loading';
-import { Link } from 'react-router-dom';
 
 class Search extends Component {
   constructor() {
@@ -68,10 +68,10 @@ class Search extends Component {
     return (
       <div data-testid="page-search">
         <Header />
-        <form id="search-form">
+        <form className="search-form">
           <label htmlFor="input-search">
             <input
-              id="input-search"
+              className="input-search"
               name="inputSearch"
               type="text"
               placeholder="Nome do Artista"
@@ -83,7 +83,7 @@ class Search extends Component {
 
           <button
             type="submit"
-            id="btn-search"
+            className="btn-search"
             disabled={ disabled }
             data-testid="search-artist-button"
             onClick={ this.haddleSearch }

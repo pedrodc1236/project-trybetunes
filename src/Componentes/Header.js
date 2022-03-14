@@ -28,7 +28,7 @@ class Header extends Component {
       nameUser,
     } = this.state;
     return (
-      <header id="header-div" data-testid="header-component">
+      <header className="header-div" data-testid="header-component">
         {!nameUser
           ? <Loading />
           : <p className="name-user" data-testid="header-user-name">{ nameUser.name }</p>}

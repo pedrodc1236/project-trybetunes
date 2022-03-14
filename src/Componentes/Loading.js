@@ -4,7 +4,7 @@ import './Loading.css';
 class Loading extends Component {
   render() {
     return (
-      <p id="loading">
+      <p className="loading">
         Carregando...
       </p>
     );

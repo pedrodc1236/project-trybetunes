@@ -1,34 +1,33 @@
-#header-div {
-  background-color: 
-  #023031;
+.header-div {
+  background-color: #023031;
 }
 
 .name-user {
+  align-self: center;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
   display: flex;
+  justify-content: center;
   margin-left: 850px;
   padding: 15px;
-  background-color:#FFFFFF;
-  color: black;
-  align-self: center;
-  justify-content: center;
-  border-radius: 20px;
 }
 
 .nav-links {
+  align-items: center;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .link-1, .link-2, .link-3 {
-  padding: 20px 135px 20px 135px;
+  background-color: #f0f2f5;
   color: black;
+  font-weight: 700;
+  padding: 20px 135px;
   text-decoration: none;
-  font-weight: bolder;
-  background-color: #F0F2F5;
 }
 
 .link-3 {
-  background-color: #036B52;
-  color: #FFFFFF;
+  background-color: #036b52;
+  color: white;
 }
