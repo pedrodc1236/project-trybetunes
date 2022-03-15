@@ -46,6 +46,10 @@ class MusicCard extends Component {
         });
       } else if (prevChecked === true && checked === false) {
         await removeSong(music);
+        const { func } = this.props;
+        if (window.location.href.includes('favorites')) {
+          func();
+        }
         this.setState({
           loading: false,
         });
@@ -85,6 +89,7 @@ MusicCard.propTypes = {
     trackId: PropTypes.number,
   }).isRequired,
   favMusics: PropTypes.arrayOf(PropTypes.object).isRequired,
+  func: PropTypes.func.isRequired,
 };
 
 export default MusicCard;
