@@ -1,4 +1,5 @@
-Projeto TrybeTunes!
+<h1 align="center">Projeto TrybeTunes headphones </h1>
+
 
 Foi criado uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, onde é possível:
 
