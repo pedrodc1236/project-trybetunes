@@ -10,8 +10,7 @@
 
 <h2 align="left"> Sobre: </h2>
 
-# Foi criado uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, onde é possível:
-
+Foi criado uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, onde é possível:
 - Fazer login;
 - Pesquisar por uma banda ou artista;
 - Listar os álbuns disponíveis dessa banda ou artista;
